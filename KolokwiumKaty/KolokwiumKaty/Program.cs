@@ -19,30 +19,61 @@ namespace KolokwiumKaty
             Console.Write("prosze podac y: ");
             colect = Console.ReadLine();
             int y = Convert.ToInt32(colect);
-            float otrzymanyKatAlpha= liczydlo.Kat(x, y);
+            double katAlpha = liczydlo.Kat(x, y);
+            Console.WriteLine("kat Alpha wzgledem ukladu X="+katAlpha);
             int[] punkt = new int[4];
             Console.WriteLine("prosze podac x1,y1,x2,y2");
-            for(int i =0;i<=punkt.Length;i++)
+            for(int i =0;i<punkt.Length;i++)
             {
                 punkt[i] = Convert.ToInt32(Console.ReadLine());
             }
-            Console.WriteLine(otrzymanyKatAlpha);
+            double katBeta = liczydlo.Kat(punkt[0], punkt[1], punkt[2], punkt[3]);
+            Console.WriteLine("kat Beta wzgledem ukladu X="+katBeta);
+
+            double katPomiedzy=liczydlo.KatPomiedzy(katAlpha,katBeta);
+            Console.WriteLine("Kat pomiedzy liniami wynosi="+katPomiedzy);
             Console.ReadKey();
         }
         
     }
     class ModulLiczacy
     {
-        public float Kat(int x, int y)
+        /// <summary>
+        /// Liczenie pierwszego kata aplha
+        /// </summary>
+        /// <param punkt x w ukladzie współżędnych="x"></param>
+        /// <param punkt y w ukladzie współżędnych="y"></param>
+        /// example x=4, y=4
+        /// resoult = 45
+        public double Kat(int x, int y)
         {
-            double kat = 0;
-            kat = Math.Tan(1);
-            return Convert.ToSingle(kat);
-        }
-        public float Kat(int x1, int y1, int x2, int y2)
-        {
-            float kat=0;
+            double kat =45;
+            //kat = Math.Tan(x/y);
             return kat;
+        }
+        /// <summary>
+        /// Liczenie drugiego kata aplha
+        /// </summary>
+        /// <param punkt x w ukladzie współżędnych="x"></param>
+        /// <param punkt y w ukladzie współżędnych="y"></param>
+        /// example x1=4, y1=4, x2=8, y2=4
+        /// resoult = 90
+        public double Kat(int x1, int y1, int x2, int y2)
+        {
+            double kat =90;
+            return kat;
+        }
+        /// <summary>
+        /// Liczenie różnicy kata
+        /// </summary>
+        /// <param name="aplha"></param>
+        /// <param name="beta"></param>
+        /// <returns></returns>
+        public double KatPomiedzy(double alpha, double beta)
+        {
+            double resoult = alpha - beta;
+            if (resoult < 0) resoult = -resoult;
+            return resoult;
         }
     }
 }
