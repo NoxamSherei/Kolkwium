@@ -29,8 +29,13 @@ namespace KolokwiumKaty
     {
         public float Kat(int x, int y)
         {
-            float kat = 0;
-            kat = x / y;
+            double kat = 0;
+            kat = Math.Tan(1);
+            return Convert.ToSingle(kat);
+        }
+        public float Kat(int x1, int y1, int x2, int y2)
+        {
+            float kat=0;
             return kat;
         }
     }
