@@ -36,7 +36,7 @@ namespace KolokwiumKaty
         }
         
     }
-    class ModulLiczacy
+    public class ModulLiczacy
     {
         /// <summary>
         /// Liczenie pierwszego kata aplha
