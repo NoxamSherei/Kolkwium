@@ -20,6 +20,12 @@ namespace KolokwiumKaty
             colect = Console.ReadLine();
             int y = Convert.ToInt32(colect);
             float otrzymanyKatAlpha= liczydlo.Kat(x, y);
+            int[] punkt = new int[4];
+            Console.WriteLine("prosze podac x1,y1,x2,y2");
+            for(int i =0;i<=punkt.Length;i++)
+            {
+                punkt[i] = Convert.ToInt32(Console.ReadLine());
+            }
             Console.WriteLine(otrzymanyKatAlpha);
             Console.ReadKey();
         }
